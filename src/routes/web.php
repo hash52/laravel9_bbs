@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ThreadController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,9 @@ Route::controller(ThreadController::class)->prefix("thread")->name("thread.")->g
         Route::get('/create', 'add')->name("add");
         Route::post('/craete', 'create')->name("create");
     });
-    
 });
+
+Route::post('/post', [PostController::class, "create"])->name('post.create');
 
 
 Auth::routes();
