@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::controller(ThreadController::class)->prefix("thread")->name("thread.")->group(function () {
     Route::get('/', 'index')->name("index");
+    Route::get('/{thread}', 'show')->name('show');
     Route::middleware(['auth'])->group(function () {
         Route::get('/create', 'add')->name("add");
         Route::post('/craete', 'create')->name("create");
