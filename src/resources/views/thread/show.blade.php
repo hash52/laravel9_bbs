@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section("title", "スレッド一覧")
+@section("title", $thread->title)
 @section('content')
 <div class="container">
     <div class="media text-muted pt-3">
