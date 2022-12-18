@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::controller(ThreadController::class)->prefix("thread")->name("thread.")->group(function () {
+    Route::get('/create', 'add')->name("add");
+    Route::post('/craete', 'create')->name("create");
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
