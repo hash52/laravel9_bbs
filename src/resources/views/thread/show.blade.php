@@ -58,7 +58,7 @@
     </div>
 
     <small class="d-block text-right mt-3">
-          <a href="{{ route("thread.add")}}">スレッド作成</a>
+          <a href="{{ route("thread.index")}}">スレッド一覧</a>
     </small>
 </div>
 @endsection
