@@ -7,6 +7,11 @@ use App\Models\Thread;
 
 class ThreadController extends Controller
 {
+
+    public function index(){
+        return view("thread.index", ["threads" => Thread::all()]);
+    }
+
     public function add()
     {
         return view('thread.create');
@@ -17,6 +22,6 @@ class ThreadController extends Controller
         $thread->title = $request->title;
         $thread->body = $request->body;
         $thread->save();
-        return redirect(route("thread.add"));
+        return redirect(route("thread.index"));
     }
 }
