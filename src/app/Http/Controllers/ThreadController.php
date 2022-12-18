@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Thread;
+use Auth;
 
 class ThreadController extends Controller
 {
@@ -19,6 +20,7 @@ class ThreadController extends Controller
 
     public function create(Request $request){
         $thread = new Thread;
+        $thread->user_id = Auth::id();
         $thread->title = $request->title;
         $thread->body = $request->body;
         $thread->save();
